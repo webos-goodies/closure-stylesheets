@@ -22,6 +22,7 @@ import com.google.common.css.SimpleSubstitutionMap;
 import com.google.common.css.SplittingSubstitutionMap;
 import com.google.common.css.SubstitutionMap;
 import com.google.common.css.SubstitutionMapProvider;
+import com.google.common.collect.ImmutableSet;
 
 /**
  * {@link RenamingType} is an enumeration of the possible values for the
@@ -58,7 +59,7 @@ enum RenamingType {
   CLOSURE(new SubstitutionMapProvider() {
     @Override
     public SubstitutionMap get() {
-      return new SplittingSubstitutionMap(new MinimalSubstitutionMap());
+      return new SplittingSubstitutionMap(new MinimalSubstitutionMap(ImmutableSet.<String>of("ad", "aD", "Ad", "AD")));
     }
   }),
   ;
